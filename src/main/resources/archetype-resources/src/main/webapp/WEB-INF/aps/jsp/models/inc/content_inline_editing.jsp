@@ -27,7 +27,6 @@
                                 accessToken = '<c:out value="${sessionScope.currentUser.accessToken}"/>';
                             }
                             xhr.setRequestHeader("Authorization", "Bearer " + accessToken);
-
                         }
                     },
                     params: function (params) {

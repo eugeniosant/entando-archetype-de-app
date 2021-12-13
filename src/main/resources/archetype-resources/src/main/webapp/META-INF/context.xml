@@ -1,34 +1,37 @@
 <?xml version='1.0' encoding='utf-8'?>
-<Context path="/Entando" docBase="./Entando" debug="1" reloadable="false">
+<Context path="/de-app-from-archetype" docBase="./de-app-from-archetype" debug="1" reloadable="false">
 
-	<Environment name="logActiveFileOutput" value="true" type="java.lang.String" override="false" />
-	<Environment name="logName" value="Entando" type="java.lang.String" override="false" />
-	<Environment name="logFileRotatePattern" value="/home/wiz/git/Entando/target/log_Entando" type="java.lang.String" override="false" />
-	<Environment name="logLevel" value="DEBUG" type="java.lang.String" override="false" />
-	<Environment name="logFileSize" value="200000" type="java.lang.String" override="false" />
-	<Environment name="logFilesCount" value="10" type="java.lang.String" override="false" />
+    <Environment name="logActiveFileOutput" value="true" type="java.lang.String" override="false" />
+    <Environment name="logName" value="/media/eu/Volume/projects/github-ps/de-app-from-archetype/target/de-app-from-archetype.log" type="java.lang.String" override="false" />
+    <Environment name="logFileRotatePattern" value="/media/eu/Volume/projects/github-ps/de-app-from-archetype/target/de-app-from-archetype_logs/de-app-from-archetype-%i.log.gz" type="java.lang.String" override="false" />
+    <Environment name="logLevel" value="INFO" type="java.lang.String" override="false" />
+    <Environment name="logFileSize" value="10485760" type="java.lang.String" override="false" />
+    <Environment name="logFilesCount" value="10" type="java.lang.String" override="false" />
 
-	<Environment name="configVersion" value="production" type="java.lang.String" override="false" />
+    <Environment name="configVersion" value="production" type="java.lang.String" override="false" />
 
-	<Environment name="applicationBaseURL" value="http://localhost:8080/Entando/" type="java.lang.String" override="false" />
-	<Environment name="resourceRootURL" value="/Entando/resources/" type="java.lang.String" override="false" />
-	<Environment name="protectedResourceRootURL" value="/Entando/protected/" type="java.lang.String" override="false" />
+    <Environment name="applicationBaseURL" value="https://localhost:8080/de-app-from-archetype/" type="java.lang.String" override="false" />
+    <Environment name="resourceRootURL" value="/de-app-from-archetype/resources/" type="java.lang.String" override="false" />
+    <Environment name="protectedResourceRootURL" value="/de-app-from-archetype/protected/" type="java.lang.String" override="false" />
 
-	<Environment name="resourceDiskRootFolder" value="/home/wiz/git/Entando/src/main/webapp/resources" type="java.lang.String" override="false" />
-	<Environment name="protectedResourceDiskRootFolder" value="/home/wiz/git/Entando/src/main/webapp/protected" type="java.lang.String" override="false" />
+    <Environment name="resourceDiskRootFolder" value="/media/eu/Volume/projects/github-ps/de-app-from-archetype/src/main/webapp/resources" type="java.lang.String" override="false" />
+    <Environment name="protectedResourceDiskRootFolder" value="/media/eu/Volume/projects/github-ps/de-app-from-archetype/src/main/webapp/protected" type="java.lang.String" override="false" />
 
-	<Environment name="indexDiskRootFolder" value="/home/wiz/git/target/temp/indexdir" type="java.lang.String" override="false" />
-
-	<Resource name="jdbc/portDataSource" auth="Container"
+    <Environment name="indexDiskRootFolder" value="/media/eu/Volume/projects/github-ps/de-app-from-archetype/target/temp/indexdir" type="java.lang.String" override="false" />
+    
+    <Environment name="portDataSourceClassName" value="org.apache.derby.jdbc.EmbeddedDriver" type="java.lang.String" override="false" />
+    <Environment name="servDataSourceClassName" value="org.apache.derby.jdbc.EmbeddedDriver" type="java.lang.String" override="false" />
+	
+    <Resource name="jdbc/portDataSource" auth="Container"
 		type="javax.sql.DataSource" driverClassName="org.postgresql.Driver"
-		maxActive="8" maxIdle="4"
-		username="agile" password="agile"
+              maxActive="8" maxIdle="4"
+              username="agile" password="agile"
 		url="jdbc:postgresql://localhost:5432/EntandoPort" />
 
-	<Resource name="jdbc/servDataSource" auth="Container"
+    <Resource name="jdbc/servDataSource" auth="Container"
 		type="javax.sql.DataSource" driverClassName="org.postgresql.Driver"
-		maxActive="8" maxIdle="4"
-		username="agile" password="agile"
+              maxActive="8" maxIdle="4"
+              username="agile" password="agile"
 		url="jdbc:postgresql://localhost:5432/EntandoServ" />
 
 </Context>
